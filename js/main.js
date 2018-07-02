@@ -3,7 +3,7 @@ let restaurants,
   cuisines
 var map
 var markers = []
-
+let tabindex = 4;
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -128,10 +128,12 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
+    tabindex++;
   });
   addMarkersToMap();
 }
-
+// const mapCont = document.getElementById('map-container');
+// mapCont.setAttribute('tabindex', -1);
 /**
  * Create restaurant HTML.
  */
@@ -141,6 +143,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('alt', `${restaurant.name} restaurant photo`);
   li.append(image);
 
   const name = document.createElement('h1');
@@ -158,10 +161,13 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute('aria-label', `Find out more about ${restaurant.name}`);
+  more.setAttribute('tabindex', tabindex);
   li.append(more)
 
   return li
 }
+ 
 
 /**
  * Add markers for current restaurants to the map.
@@ -176,3 +182,4 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 }
+
