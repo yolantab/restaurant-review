@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css"/>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="icon" type="image/png" href="img/favicon.png">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#db5945">
-    <link rel="icon" sizes="192x192" href = "img/android-icon-192x192.png">
+    <link rel="icon" sizes="192x192" href = "img/android-icon-192x192.png"/>
 
     <title>Restaurant Reviews</title>
-    <!-- <script>
+    <script>
         // Register the service worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
@@ -24,7 +24,7 @@
                 console.log('ServiceWorker registration failed: ', err);
             });
         }
-    </script> -->
+    </script>
 </head>
 
 <body>
@@ -40,13 +40,13 @@
            
             <div id="map"></div>
         </section>
-        <section>
+        <section >
             <div class="filter-options">
                 <h2 id ="main" tabindex="-1">Filter Results</h2>
-                <select id="neighborhoods-select" name="neighborhoods" tabindex ="2" onchange="updateRestaurants()">
+                <select id="neighborhoods-select" aria-label="neighborhoods-select" name="neighborhoods" tabindex ="2" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-                <select id="cuisines-select" name="cuisines"tabindex ="3" onchange="updateRestaurants()">
+                <select id="cuisines-select" aria-label="select-cuisine" name="cuisines"tabindex ="3" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
             </div>

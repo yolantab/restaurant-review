@@ -85,6 +85,7 @@ section {
     flex-wrap: wrap;
 }
 
+
 /* ====================== Navigation ====================== */
 
 nav {
@@ -219,7 +220,7 @@ nav h1 a {
     min-width: 100%;
 }
 
-#restaurants-list li h1 {
+#restaurants-list li h2 {
     color: #f18200;
     font-family: Arial, sans-serif;
     font-size: 14pt;
@@ -323,7 +324,7 @@ nav h1 a {
     padding: 30px 40px 80px;
 }
 
-#reviews-container h2 {
+#reviews-container h3 {
     color: #f58500;
     font-size: 24pt;
     font-weight: 300;
@@ -357,6 +358,33 @@ nav h1 a {
     color: #666;
 }
 
+#skipmap {
+    left: -999px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+}
+
+a#skipmap:focus, a#skipmap:active {
+    position: absolute;
+    color: #fff;
+    background-color: #000;
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow: auto;
+    margin: 10px 35%;
+    padding: 5px;
+    border-radius: 15px;
+    border: 4px solid yellow;
+    text-align: center;
+    font-size: 1.2em;
+    z-index: 1100;
+}
 @media screen and (max-width: 1024px) {
 
     #restaurants-list li {
