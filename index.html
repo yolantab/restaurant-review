@@ -13,21 +13,22 @@
     <link rel="icon" sizes="192x192" href = "img/android-icon-192x192.png">
 
     <title>Restaurant Reviews</title>
-    <script>
+    <!-- <script>
         // Register the service worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
                 // Registration was successful
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }).catch(function(err) {
-                // registration failed :(
+                // registration failed 
                 console.log('ServiceWorker registration failed: ', err);
             });
         }
-    </script>
+    </script> -->
 </head>
 
 <body>
+    <a id="skipmap" href="#main">Skip to main content</a>
     <header>
         <nav>
             <h1 tabindex = "1"><a href="/">Restaurant Reviews</a></h1>
@@ -36,11 +37,12 @@
 
     <main id="maincontent">
         <section id="map-container">
+           
             <div id="map"></div>
         </section>
         <section>
             <div class="filter-options">
-                <h2>Filter Results</h2>
+                <h2 id ="main" tabindex="-1">Filter Results</h2>
                 <select id="neighborhoods-select" name="neighborhoods" tabindex ="2" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
